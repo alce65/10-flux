@@ -12,9 +12,9 @@ export class HttpStoreTasks {
             return resp.json();
         });
     }
-    getTask(task: TaskModel): Promise<TaskModel> {
+    getTask(id: TaskModel['id']): Promise<TaskModel> {
         // GET
-        return fetch(this.url + `/${task.id}`).then((resp) => resp.json());
+        return fetch(this.url + `/${id}`).then((resp) => resp.json());
     }
     setTask(task: TaskModel): Promise<TaskModel> {
         // POST
